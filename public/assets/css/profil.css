@@ -1,5 +1,5 @@
 .hero-profil {
-    height: 70vh;
+    height: 40vh; /* mobile : plus petit bandeau */
     background: url('../img/profil.jpg') center/cover no-repeat;
 }
 
@@ -10,21 +10,23 @@ body {
 }
 
 .container {
+    width: 90%;
     max-width: 800px;
-    margin: 40px auto;
-    padding: 0 20px;
+    margin: 20px auto;
+    padding: 0 15px;
 }
 
 h1 {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     font-weight: 700;
     color: #d43f3a;
+    font-size: 1.5rem;
 }
 
 form {
     background: white;
-    padding: 25px;
+    padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
@@ -59,6 +61,8 @@ button, a.btn {
     cursor: pointer;
     text-decoration: none;
     transition: background 0.3s;
+    width: 100%; /* mobile : bouton plein écran */
+    text-align: center;
 }
 
 button:hover, a.btn:hover {
@@ -79,4 +83,24 @@ ul li {
 .success {
     color: green;
     font-weight: 500;
+}
+
+/* Desktop */
+@media (min-width: 769px) {
+    .hero-profil {
+        height: 70vh; /* bandeau plus grand */
+    }
+
+    .container {
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    button, a.btn {
+        width: auto; /* bouton redevient normal */
+    }
 }

@@ -1,10 +1,12 @@
 .auth-page {
     display: flex;
-    height: 100vh;
+    flex-direction: column; /* mobile : image en haut, formulaire en bas */
+    min-height: 100vh;
 }
 
 .auth-image {
-    flex: 1.3;
+    width: 100%;
+    height: 40vh; /* mobile : image visible en bandeau */
     background-size: cover;
     background-position: center;
 }
@@ -12,7 +14,7 @@
 .auth-form {
     flex: 1;
     background: white;
-    padding: 3rem;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -56,12 +58,19 @@
     color: black;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* Desktop */
+@media (min-width: 769px) {
     .auth-page {
-        flex-direction: column;
+        flex-direction: row; /* desktop : image + formulaire côte à côte */
     }
+
     .auth-image {
-        height: 40vh;
+        flex: 1.3;
+        height: auto; /* hauteur s'adapte */
+    }
+
+    .auth-form {
+        flex: 1;
+        padding: 3rem;
     }
 }

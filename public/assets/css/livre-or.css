@@ -2,7 +2,7 @@
 .hero-livre-or {
     position: relative;
     width: 100%;
-    height: 430px; /* tu peux ajuster */
+    height: 40vh; /* mobile : plus petit bandeau */
     background-image: url('../img/livreor.jpg');
     background-size: cover;
     background-position: center;
@@ -19,9 +19,10 @@
 
 /* Container principal */
 .container {
+    width: 90%;
     max-width: 1000px;
-    margin: 40px auto;
-    padding: 0 20px;
+    margin: 20px auto;
+    padding: 0 15px;
 }
 
 /* Boutons */
@@ -29,11 +30,13 @@
     display: inline-block;
     background-color: #c0392b; /* rouge japonais */
     color: #fff;
-    padding: 10px 20px;
+    padding: 12px 20px;
     margin-bottom: 20px;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    width: 100%; /* mobile : bouton full width */
+    text-align: center;
 }
 
 .btn:hover {
@@ -42,7 +45,11 @@
 
 /* Commentaires */
 .commentaire {
-    padding: 15px 23;
+    padding: 15px;
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
 }
 
 .commentaire .meta {
@@ -61,4 +68,20 @@ hr {
     border: none;
     border-top: 1px solid #eee;
     margin: 10px 0;
+}
+
+/* Desktop */
+@media (min-width: 769px) {
+    .hero-livre-or {
+        height: 430px; /* grand bandeau */
+    }
+
+    .container {
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+
+    .btn {
+        width: auto; /* bouton redevient compact */
+    }
 }

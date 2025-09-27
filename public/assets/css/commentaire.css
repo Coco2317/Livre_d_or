@@ -1,6 +1,6 @@
 /* ======= HERO SECTION ======= */
 .hero-commentaire {
-    height: 70vh; /* Ajustable selon ton image */
+    height: 40vh; /* mobile : bandeau plus petit */
     background: url('../img/commentaire.jpg') center/cover no-repeat;
 }
 
@@ -13,23 +13,25 @@ body {
 }
 
 .container {
+    width: 90%;
     max-width: 800px;
-    margin: 40px auto;
-    padding: 0 20px;
+    margin: 20px auto;
+    padding: 0 15px;
 }
 
 /* ======= TITRES ======= */
 h1 {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     font-weight: 700;
     color: #d43f3a; /* Accent Japon */
+    font-size: 1.5rem;
 }
 
 /* ======= FORMULAIRE ======= */
 form {
     background: white;
-    padding: 25px;
+    padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
@@ -69,6 +71,8 @@ button, a.btn {
     text-decoration: none;
     transition: background 0.3s;
     margin-top: 15px;
+    width: 100%; /* mobile : bouton full width */
+    text-align: center;
 }
 
 button:hover, a.btn:hover {
@@ -85,4 +89,25 @@ ul {
 ul li {
     color: #d43f3a;
     font-weight: 500;
+}
+
+/* ======= Desktop ======= */
+@media (min-width: 769px) {
+    .hero-commentaire {
+        height: 70vh; /* bandeau grand */
+    }
+
+    .container {
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    button, a.btn {
+        width: auto; /* bouton normal */
+    }
 }

@@ -1,12 +1,15 @@
-.hero-profil {
-    height: 70vh;
-    background: url('assets/profil.jpg') center/cover no-repeat;
+/* ======= HERO SECTION ======= */
+.hero-commentaire {
+    height: 70vh; /* Ajustable selon ton image */
+    background: url('../img/commentaire.jpg') center/cover no-repeat;
 }
 
+/* ======= PAGE CONTENT ======= */
 body {
     font-family: 'Segoe UI', Tahoma, sans-serif;
     background-color: #fafafa;
     margin: 0;
+    padding: 0;
 }
 
 .container {
@@ -15,13 +18,15 @@ body {
     padding: 0 20px;
 }
 
+/* ======= TITRES ======= */
 h1 {
     text-align: center;
     margin-bottom: 30px;
     font-weight: 700;
-    color: #d43f3a;
+    color: #d43f3a; /* Accent Japon */
 }
 
+/* ======= FORMULAIRE ======= */
 form {
     background: white;
     padding: 25px;
@@ -35,20 +40,23 @@ label {
     margin-bottom: 8px;
 }
 
-input {
+textarea {
     width: 100%;
+    min-height: 120px;
     padding: 12px;
-    margin-bottom: 15px;
     border: 1px solid #ddd;
     border-radius: 8px;
     font-size: 1rem;
+    resize: vertical;
     outline: none;
+    transition: border-color 0.3s;
 }
 
-input:focus {
+textarea:focus {
     border-color: #d43f3a;
 }
 
+/* ======= BOUTONS ======= */
 button, a.btn {
     display: inline-block;
     background: #d43f3a;
@@ -56,27 +64,25 @@ button, a.btn {
     padding: 12px 25px;
     border: none;
     border-radius: 8px;
+    font-size: 1rem;
     cursor: pointer;
     text-decoration: none;
     transition: background 0.3s;
+    margin-top: 15px;
 }
 
 button:hover, a.btn:hover {
     background: #a32e2b;
 }
 
+/* ======= ERREURS ======= */
 ul {
-    list-style: none;
     padding: 0;
+    list-style: none;
     margin-bottom: 20px;
 }
 
 ul li {
     color: #d43f3a;
-    font-weight: 500;
-}
-
-.success {
-    color: green;
     font-weight: 500;
 }

@@ -3,7 +3,7 @@
     position: relative;
     width: 100%;
     height: 430px; /* tu peux ajuster */
-    background-image: url('assets/livreor.jpg'); /* mets ton image */
+    background-image: url('../img/livreor.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

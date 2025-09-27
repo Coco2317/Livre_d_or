@@ -272,6 +272,65 @@ button:focus {
   outline: none;
 }
 
+/* ===== PAGINATION ===== */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 2rem 0;
+    flex-wrap: wrap; /* Mobile-friendly */
+}
+
+.pagination a,
+.pagination span {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Lien normal */
+.pagination a {
+    background-color: white;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.pagination a:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Page active */
+.pagination .current {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 700;
+    cursor: default;
+    border: 1px solid var(--primary-color);
+}
+
+/* Points de suspension */
+.pagination .dots {
+    padding: 8px 10px;
+    color: #888;
+    cursor: default;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .pagination a,
+    .pagination span {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+    }
+}
+
+
 /* FOOTER */
 footer {
   background-color: #014315;

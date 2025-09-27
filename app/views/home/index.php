@@ -48,15 +48,26 @@
     <?php foreach ($comments as $comment): ?>
       <div class="commentaire">
         <div class="meta">
-          Posté le <?= htmlspecialchars(date('d/m/Y', strtotime($comment['date']))) ?> 
+          Posté le <?= htmlspecialchars(date('d/m/Y', strtotime($comment['date']))) ?>
           par <?= htmlspecialchars($comment['login']) ?>
         </div>
         <p><?= nl2br(htmlspecialchars($comment['commentaire'])) ?></p>
       </div>
     <?php endforeach; ?>
+
+    <?php
+    $controller = "home";
+    $action = "index";
+    include __DIR__ . '/../partials/pagination.php';
+    ?>
+
+
+
   <?php else: ?>
     <p>Aucun commentaire pour le moment.</p>
   <?php endif; ?>
 </section>
+
+
 
 <?php include __DIR__ . '/../layouts/footer.php'; ?>

@@ -1,7 +1,7 @@
 <?php include __DIR__ . '/../layouts/header.php'; ?>
 <link rel="stylesheet" href="assets/css/livre-or.css">
 
-<section class="hero-commentaire"></section>
+<section class="hero-livre-or"></section>
 
 <div class="container">
     <h1>Livre d’or</h1>
@@ -22,6 +22,14 @@
                 <p><?= nl2br(htmlspecialchars($comment['commentaire'])) ?></p>
             </div>
         <?php endforeach; ?>
+
+        <?php
+        // Pagination spécifique à la page Livre d'or
+        $controller = "commentaire";
+        $action = "index";
+        include __DIR__ . '/../partials/pagination.php';
+        ?>
+
     <?php else: ?>
         <p>Aucun commentaire pour le moment.</p>
     <?php endif; ?>

@@ -2,15 +2,24 @@
 require_once __DIR__ . '/../models/Commentaire.php';
 
 class CommentaireController {
-    // Afficher tous les commentaires (page Livre d’or)
+
+    // Page Livre d'or avec pagination
     public function index($db) {
         $commentaireModel = new Commentaire($db);
-        $comments = $commentaireModel->getAll();
+
+        // Pagination
+        $limit = 5; // nombre de commentaires par page
+        $page = isset($_GET['page']) ? max(1, (int)$_GET['page']) : 1;
+        $offset = ($page - 1) * $limit;
+
+        $comments = $commentaireModel->getPagined($limit, $offset);
+        $totalComments = $commentaireModel->countAll();
+        $totalPages = ceil($totalComments / $limit);
 
         require __DIR__ . '/../views/commentaire/index.php';
     }
 
-    // jouter un commentaire
+    // Création d’un commentaire
     public function create($db) {
         $errors = [];
 
@@ -30,7 +39,7 @@ class CommentaireController {
                 $commentaireModel = new Commentaire($db);
                 $commentaireModel->create($commentaire, $idUtilisateur);
 
-                // Redirection vers la page Livre d’or
+                // Redirection vers Livre d’or après succès
                 header("Location: index.php?controller=commentaire&action=index");
                 exit;
             }
